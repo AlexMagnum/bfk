@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.sataButton4 = new FrameworkTest.SATAButton();
             this.sataButton5 = new FrameworkTest.SATAButton();
             this.sataButton3 = new FrameworkTest.SATAButton();
             this.sataButton2 = new FrameworkTest.SATAButton();
@@ -38,9 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -51,6 +58,7 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.White;
+            this.menuPanel.Controls.Add(this.sataButton4);
             this.menuPanel.Controls.Add(this.sataButton5);
             this.menuPanel.Controls.Add(this.sataButton3);
             this.menuPanel.Controls.Add(this.sataButton2);
@@ -62,6 +70,45 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(257, 664);
             this.menuPanel.TabIndex = 0;
+            // 
+            // sataButton4
+            // 
+            this.sataButton4.ButtonText = "Користувачі";
+            this.sataButton4.CheckedBackground = System.Drawing.Color.White;
+            this.sataButton4.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.sataButton4.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.sataButton4.CheckedOutline = System.Drawing.Color.White;
+            this.sataButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sataButton4.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.sataButton4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.sataButton4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.sataButton4.HoverForeColor = System.Drawing.Color.White;
+            this.sataButton4.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton4.HoverImage")));
+            this.sataButton4.HoverImageTint = System.Drawing.Color.White;
+            this.sataButton4.HoverOutline = System.Drawing.Color.Empty;
+            this.sataButton4.Image = ((System.Drawing.Image)(resources.GetObject("sataButton4.Image")));
+            this.sataButton4.ImageAutoCenter = false;
+            this.sataButton4.ImageExpand = new System.Drawing.Point(3, 3);
+            this.sataButton4.ImageOffset = new System.Drawing.Point(20, 0);
+            this.sataButton4.ImageTint = System.Drawing.Color.White;
+            this.sataButton4.IsToggleButton = false;
+            this.sataButton4.IsToggled = false;
+            this.sataButton4.Location = new System.Drawing.Point(0, 405);
+            this.sataButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.sataButton4.Name = "sataButton4";
+            this.sataButton4.NormalBackground = System.Drawing.Color.White;
+            this.sataButton4.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.sataButton4.NormalOutline = System.Drawing.Color.Empty;
+            this.sataButton4.OutlineThickness = 2F;
+            this.sataButton4.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.sataButton4.PressedForeColor = System.Drawing.Color.DimGray;
+            this.sataButton4.PressedImageTint = System.Drawing.Color.White;
+            this.sataButton4.PressedOutline = System.Drawing.Color.Empty;
+            this.sataButton4.Rounding = new System.Windows.Forms.Padding(5);
+            this.sataButton4.Size = new System.Drawing.Size(257, 51);
+            this.sataButton4.TabIndex = 3;
+            this.sataButton4.TextAutoCenter = false;
+            this.sataButton4.TextOffset = new System.Drawing.Point(15, 0);
             // 
             // sataButton5
             // 
@@ -75,7 +122,7 @@
             this.sataButton5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.sataButton5.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sataButton5.HoverForeColor = System.Drawing.Color.White;
-            this.sataButton5.HoverImage = null;
+            this.sataButton5.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton5.HoverImage")));
             this.sataButton5.HoverImageTint = System.Drawing.Color.White;
             this.sataButton5.HoverOutline = System.Drawing.Color.Empty;
             this.sataButton5.Image = ((System.Drawing.Image)(resources.GetObject("sataButton5.Image")));
@@ -105,7 +152,7 @@
             // 
             // sataButton3
             // 
-            this.sataButton3.ButtonText = "Користувачі";
+            this.sataButton3.ButtonText = "Спеціальності";
             this.sataButton3.CheckedBackground = System.Drawing.Color.White;
             this.sataButton3.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
             this.sataButton3.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
@@ -115,7 +162,7 @@
             this.sataButton3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.sataButton3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataButton3.HoverForeColor = System.Drawing.Color.White;
-            this.sataButton3.HoverImage = null;
+            this.sataButton3.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton3.HoverImage")));
             this.sataButton3.HoverImageTint = System.Drawing.Color.White;
             this.sataButton3.HoverOutline = System.Drawing.Color.Empty;
             this.sataButton3.Image = ((System.Drawing.Image)(resources.GetObject("sataButton3.Image")));
@@ -154,7 +201,7 @@
             this.sataButton2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.sataButton2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataButton2.HoverForeColor = System.Drawing.Color.White;
-            this.sataButton2.HoverImage = null;
+            this.sataButton2.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton2.HoverImage")));
             this.sataButton2.HoverImageTint = System.Drawing.Color.White;
             this.sataButton2.HoverOutline = System.Drawing.Color.Empty;
             this.sataButton2.Image = ((System.Drawing.Image)(resources.GetObject("sataButton2.Image")));
@@ -243,11 +290,61 @@
             // 
             // topPanel
             // 
+            this.topPanel.Controls.Add(this.label4);
+            this.topPanel.Controls.Add(this.label3);
+            this.topPanel.Controls.Add(this.sataPictureBox1);
+            this.topPanel.Controls.Add(this.label2);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(257, 0);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(767, 67);
             this.topPanel.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(552, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 21);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Технічний секретар";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(552, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "МАГДИБОР Олександр";
+            // 
+            // sataPictureBox1
+            // 
+            this.sataPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.sataPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.sataPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox1.BorderSize = 1;
+            this.sataPictureBox1.GradientAngle = 50F;
+            this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
+            this.sataPictureBox1.Location = new System.Drawing.Point(492, 9);
+            this.sataPictureBox1.Name = "sataPictureBox1";
+            this.sataPictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sataPictureBox1.TabIndex = 1;
+            this.sataPictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(33, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 26);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Анкета абітурієнта";
             // 
             // mainPanel
             // 
@@ -267,6 +364,7 @@
             this.Controls.Add(this.menuPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -274,6 +372,9 @@
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +391,10 @@
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel mainPanel;
         private FrameworkTest.SATAButton sataButton5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
+        private System.Windows.Forms.Label label2;
+        private FrameworkTest.SATAButton sataButton4;
     }
 }
