@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bfk_pruyom.UC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace bfk_pruyom.Forms
         public Dashboard()
         {
             InitializeComponent();
-
+            label2.Text = "";
         }
         
 
@@ -42,5 +43,20 @@ namespace bfk_pruyom.Forms
                 return cp;
             }
         }
+
+        private void sataButton1_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Анкета абітурієнта";
+            Anketa a = new Anketa();
+            AddUserControl(a);
+        }
+
+        private void AddUserControl(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(c);
+        }
+
     }
 }

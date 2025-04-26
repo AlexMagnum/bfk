@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace bfk_pruyom
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private const int CS_DROPSHADOW = 0x00020000;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             Dashboard d = new Dashboard();
@@ -31,6 +31,21 @@ namespace bfk_pruyom
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Image.FromFile(@"..\..\Images\close_hover.png");
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Image.FromFile(@"..\..\Images\close.png");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

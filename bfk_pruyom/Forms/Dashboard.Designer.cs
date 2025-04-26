@@ -124,7 +124,7 @@
             this.sataButton5.HoverForeColor = System.Drawing.Color.White;
             this.sataButton5.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton5.HoverImage")));
             this.sataButton5.HoverImageTint = System.Drawing.Color.White;
-            this.sataButton5.HoverOutline = System.Drawing.Color.Empty;
+            this.sataButton5.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sataButton5.Image = ((System.Drawing.Image)(resources.GetObject("sataButton5.Image")));
             this.sataButton5.ImageAutoCenter = false;
             this.sataButton5.ImageExpand = new System.Drawing.Point(3, 3);
@@ -242,7 +242,7 @@
             this.sataButton1.HoverForeColor = System.Drawing.Color.White;
             this.sataButton1.HoverImage = ((System.Drawing.Image)(resources.GetObject("sataButton1.HoverImage")));
             this.sataButton1.HoverImageTint = System.Drawing.Color.White;
-            this.sataButton1.HoverOutline = System.Drawing.Color.Empty;
+            this.sataButton1.HoverOutline = System.Drawing.Color.White;
             this.sataButton1.Image = ((System.Drawing.Image)(resources.GetObject("sataButton1.Image")));
             this.sataButton1.ImageAutoCenter = false;
             this.sataButton1.ImageExpand = new System.Drawing.Point(3, 3);
@@ -266,6 +266,7 @@
             this.sataButton1.TabIndex = 2;
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(15, 0);
+            this.sataButton1.Click += new System.EventHandler(this.sataButton1_Click);
             // 
             // label1
             // 
