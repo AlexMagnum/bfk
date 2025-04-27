@@ -78,6 +78,8 @@ namespace bfk_pruyom.UC
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sataProgressbar1 = new SATAUiFramework.Controls.SATAProgressbar();
+            this.sataToggle1 = new SATAUiFramework.Controls.SATAToggle();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.sataPanel1.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -204,6 +206,7 @@ namespace bfk_pruyom.UC
             borderRadius3.TopRight = 10;
             this.sataPanel3.BorderRadius = borderRadius3;
             this.sataPanel3.BorderThickness = 0;
+            this.sataPanel3.Controls.Add(this.sataToggle1);
             this.sataPanel3.Controls.Add(this.comboBox1);
             this.sataPanel3.Controls.Add(this.sataButton1);
             this.sataPanel3.Controls.Add(this.sataDateTimePicker1);
@@ -271,9 +274,9 @@ namespace bfk_pruyom.UC
             this.sataDateTimePicker1.BorderColor = System.Drawing.Color.LightGray;
             this.sataDateTimePicker1.BorderThickness = 1;
             this.sataDateTimePicker1.CornerRadius = 5;
-            this.sataDateTimePicker1.Location = new System.Drawing.Point(4, 93);
+            this.sataDateTimePicker1.Location = new System.Drawing.Point(56, 93);
             this.sataDateTimePicker1.Name = "sataDateTimePicker1";
-            this.sataDateTimePicker1.Size = new System.Drawing.Size(207, 20);
+            this.sataDateTimePicker1.Size = new System.Drawing.Size(155, 20);
             this.sataDateTimePicker1.TabIndex = 9;
             // 
             // userLogin
@@ -468,9 +471,9 @@ namespace bfk_pruyom.UC
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(46, 216);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.Size = new System.Drawing.Size(35, 17);
             this.label8.TabIndex = 4;
-            this.label8.Text = "ГЗ-10";
+            this.label8.Text = "ГЗ-0";
             // 
             // pictureBox9
             // 
@@ -489,9 +492,9 @@ namespace bfk_pruyom.UC
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(46, 191);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(41, 17);
             this.label7.TabIndex = 4;
-            this.label7.Text = "КН-10";
+            this.label7.Text = "КН-0";
             // 
             // pictureBox8
             // 
@@ -510,9 +513,9 @@ namespace bfk_pruyom.UC
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(46, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
+            this.label6.Size = new System.Drawing.Size(29, 17);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Е-10";
+            this.label6.Text = "Е-0";
             // 
             // pictureBox7
             // 
@@ -531,9 +534,9 @@ namespace bfk_pruyom.UC
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(46, 141);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 17);
+            this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "МД-10";
+            this.label5.Text = "МД-0";
             // 
             // pictureBox6
             // 
@@ -552,9 +555,9 @@ namespace bfk_pruyom.UC
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(46, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 17);
+            this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "М-10";
+            this.label4.Text = "М-0";
             // 
             // pictureBox5
             // 
@@ -573,9 +576,9 @@ namespace bfk_pruyom.UC
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(46, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Ф-10";
+            this.label3.Text = "Ф-0";
             // 
             // pictureBox4
             // 
@@ -594,9 +597,9 @@ namespace bfk_pruyom.UC
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Location = new System.Drawing.Point(139, 191);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 17);
+            this.label14.Size = new System.Drawing.Size(32, 17);
             this.label14.TabIndex = 4;
-            this.label14.Text = "Х-10";
+            this.label14.Text = "Х-0";
             // 
             // pictureBox15
             // 
@@ -615,9 +618,9 @@ namespace bfk_pruyom.UC
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Location = new System.Drawing.Point(139, 165);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 17);
+            this.label13.Size = new System.Drawing.Size(35, 17);
             this.label13.TabIndex = 4;
-            this.label13.Text = "КІ-10";
+            this.label13.Text = "КІ-0";
             // 
             // pictureBox14
             // 
@@ -636,9 +639,9 @@ namespace bfk_pruyom.UC
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Location = new System.Drawing.Point(139, 141);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 17);
+            this.label12.Size = new System.Drawing.Size(34, 17);
             this.label12.TabIndex = 4;
-            this.label12.Text = "ТТ-10";
+            this.label12.Text = "ТТ-0";
             // 
             // pictureBox13
             // 
@@ -657,9 +660,9 @@ namespace bfk_pruyom.UC
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label11.Location = new System.Drawing.Point(139, 115);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 17);
+            this.label11.Size = new System.Drawing.Size(43, 17);
             this.label11.TabIndex = 4;
-            this.label11.Text = "СП-10";
+            this.label11.Text = "СП-0";
             // 
             // pictureBox12
             // 
@@ -678,9 +681,9 @@ namespace bfk_pruyom.UC
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(139, 89);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 17);
+            this.label10.Size = new System.Drawing.Size(32, 17);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Л-10";
+            this.label10.Text = "Л-0";
             // 
             // pictureBox11
             // 
@@ -699,9 +702,9 @@ namespace bfk_pruyom.UC
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Location = new System.Drawing.Point(139, 63);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 17);
+            this.label9.Size = new System.Drawing.Size(32, 17);
             this.label9.TabIndex = 4;
-            this.label9.Text = "А-10";
+            this.label9.Text = "А-0";
             // 
             // pictureBox10
             // 
@@ -720,9 +723,9 @@ namespace bfk_pruyom.UC
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(46, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "ОО-10";
+            this.label2.Text = "ОО-0";
             // 
             // pictureBox3
             // 
@@ -777,7 +780,26 @@ namespace bfk_pruyom.UC
             this.sataProgressbar1.Size = new System.Drawing.Size(504, 31);
             this.sataProgressbar1.TabIndex = 3;
             this.sataProgressbar1.Text = "sataProgressbar1";
-            this.sataProgressbar1.Value = 100;
+            this.sataProgressbar1.Value = 0;
+            // 
+            // sataToggle1
+            // 
+            this.sataToggle1.AutoSize = true;
+            this.sataToggle1.EllipseBorderColor = "#3b73d1";
+            this.sataToggle1.EllipseColor = "#508ef5";
+            this.sataToggle1.Location = new System.Drawing.Point(5, 93);
+            this.sataToggle1.Name = "sataToggle1";
+            this.sataToggle1.Size = new System.Drawing.Size(47, 19);
+            this.sataToggle1.TabIndex = 12;
+            this.sataToggle1.Text = "sataToggle1";
+            this.sataToggle1.UseVisualStyleBackColor = true;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Anketa
             // 
@@ -794,6 +816,7 @@ namespace bfk_pruyom.UC
             this.sataPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.sataPanel3.ResumeLayout(false);
+            this.sataPanel3.PerformLayout();
             this.sataPanel4.ResumeLayout(false);
             this.sataPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -860,5 +883,7 @@ namespace bfk_pruyom.UC
         private FrameworkTest.SATAButton sataButton1;
         private SATAUiFramework.Controls.SATAProgressbar sataProgressbar1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private SATAUiFramework.Controls.SATAToggle sataToggle1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

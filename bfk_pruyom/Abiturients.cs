@@ -31,7 +31,6 @@ namespace bfk_pruyom
         public string fatherphone { get; set; }
         public string mothername { get; set; }
         public string motherphone { get; set; }
-        public string priorityspec { get; set; }
         public string workgroup { get; set; }
         public string information { get; set; }
         public string dormitory { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище bfk_pruyomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище bfk_pruyomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Abiturients">
           <Key>
             <PropertyRef Name="id" />
@@ -20,7 +20,6 @@
           <Property Name="fatherphone" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="mothername" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="motherphone" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="priorityspec" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="workgroup" Type="nvarchar" MaxLength="1024" Nullable="false" />
           <Property Name="information" Type="nvarchar" MaxLength="1024" Nullable="false" />
           <Property Name="dormitory" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -50,8 +49,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <Association Name="FK_applications_abiturients">
           <End Role="Abiturients" Type="Self.Abiturients" Multiplicity="1">
@@ -93,8 +92,7 @@
             <End Role="Applications" EntitySet="Applications" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bfk_pruyomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -113,7 +111,6 @@
           <Property Name="fatherphone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="mothername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="motherphone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="priorityspec" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="workgroup" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="information" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="dormitory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -210,7 +207,6 @@
                 <ScalarProperty Name="fatherphone" ColumnName="fatherphone" />
                 <ScalarProperty Name="mothername" ColumnName="mothername" />
                 <ScalarProperty Name="motherphone" ColumnName="motherphone" />
-                <ScalarProperty Name="priorityspec" ColumnName="priorityspec" />
                 <ScalarProperty Name="workgroup" ColumnName="workgroup" />
                 <ScalarProperty Name="information" ColumnName="information" />
                 <ScalarProperty Name="dormitory" ColumnName="dormitory" />
