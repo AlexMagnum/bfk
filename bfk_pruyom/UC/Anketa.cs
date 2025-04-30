@@ -18,12 +18,35 @@ namespace bfk_pruyom.UC
     {
         private bfk_pruyomEntities context;
         private string selectedFilePath;
+        private BindingList<AbiturientSort> _data;
+        private string _lastSortedColumn = "";
+        private bool _sortAscending = true;
+        private bool _checkAll = false;
+        private readonly Dictionary<string, string> specialtyShortNames = new Dictionary<string, string>
+{
+    { "Облік і оподаткування", "ОО" },
+    { "Фінанси, банківська справа та фондовий ринок", "Ф" },
+    { "Менеджмент", "М" },
+    { "Маркетинг", "МД" },
+    { "Екологія", "Е" },
+    { "Комп'ютерні науки", "КН" },
+    { "Геодезія та землеустрій", "ГЗ" },
+    { "Агрономія", "А" },
+    { "Лісове господарство", "Л" },
+    { "Садово-паркове господарство", "СП" },
+    { "Транспортні технології", "ТТ" },
+    { "Харчові технології", "Х" },
+    { "Комп'ютерна інженерія", "КІ" }
+};
 
         public Anketa()
         {
             InitializeComponent();
             context = new bfk_pruyomEntities();
             LoadCharts();
+            sataDateTimePicker1.Enabled = false;
+            LoadData();
+            ConfigureDataGridView();
         }
 
         private void enterVerify_Click(object sender, EventArgs e)
@@ -186,6 +209,7 @@ namespace bfk_pruyom.UC
         {
             ShowMessage("Базу успішно оновлено!", "Оновлення");
             LoadCharts();
+            LoadData();
         }
 
         private void ShowMessage(string message, string caption)
@@ -203,7 +227,7 @@ namespace bfk_pruyom.UC
         private void LoadCharts()
         {
             List<Abiturients> abit = context.Abiturients.ToList();
-
+            int maxValue = 0;
             label1.Text = "Всього анкет - " + abit.Count;
 
             var resultPriority = context.Applications.Where(x => x.priority == 1).GroupBy(x => x.specialtyid).Select(g => new
@@ -212,46 +236,262 @@ namespace bfk_pruyom.UC
                 AbiturientCount = g.Count()
             }).ToList();
 
-            foreach(var item in resultPriority)
+            foreach (var item in resultPriority)
             {
-                if(item.SpecialtyId == 6 && item.AbiturientCount > 0)
-                    label7.Text = "КН-" + item.AbiturientCount;
-
                 if (item.SpecialtyId == 1 && item.AbiturientCount > 0)
+                {
                     label2.Text = "ОО-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[0] = item.AbiturientCount;
+                    maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 2 && item.AbiturientCount > 0)
+                {
                     label3.Text = "Ф-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[1] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 3 && item.AbiturientCount > 0)
+                {
                     label4.Text = "М-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[2] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 4 && item.AbiturientCount > 0)
+                {
                     label5.Text = "МД-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[3] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 5 && item.AbiturientCount > 0)
+                {
                     label6.Text = "Е-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[4] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
+
+                if (item.SpecialtyId == 6 && item.AbiturientCount > 0)
+                {
+                    label7.Text = "КН-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[5] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 7 && item.AbiturientCount > 0)
+                {
                     label8.Text = "ГЗ-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[6] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 8 && item.AbiturientCount > 0)
+                {
                     label9.Text = "А-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[7] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 9 && item.AbiturientCount > 0)
+                {
                     label10.Text = "Л-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[8] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 10 && item.AbiturientCount > 0)
+                {
                     label11.Text = "СП-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[9] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 11 && item.AbiturientCount > 0)
+                {
                     label12.Text = "ТТ-" + item.AbiturientCount;
-
-                if (item.SpecialtyId == 12 && item.AbiturientCount > 0)
-                    label14.Text = "Х-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[10] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
 
                 if (item.SpecialtyId == 13 && item.AbiturientCount > 0)
+                {
                     label13.Text = "КІ-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[11] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
+
+                if (item.SpecialtyId == 12 && item.AbiturientCount > 0)
+                {
+                    label14.Text = "Х-" + item.AbiturientCount;
+                    sataBarChart1.DataSets[0].Points[12] = item.AbiturientCount;
+                    if (item.AbiturientCount > maxValue)
+                        maxValue = item.AbiturientCount;
+                }
+            }
+            sataBarChart1.MaxValue = maxValue;
+
+        }
+
+        private void sataToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sataToggle1.Checked)
+                sataDateTimePicker1.Enabled = true;
+            else
+                sataDateTimePicker1.Enabled = false;
+        }
+
+        private void LoadData()
+        {
+            using (var context = new bfk_pruyomEntities())
+            {
+                var students = context.Abiturients
+                    .Select(a => new
+                    {
+                        a.id,
+                        a.fullname,
+                        a.phone,
+                        a.appdate,
+                        Specialties = a.Applications
+                            .OrderBy(ap => ap.priority)
+                            .Select(ap => ap.Specialties.name)
+                    })
+                    .AsEnumerable()
+                    .Select(a => new AbiturientSort
+                    {
+                        Id = a.id,
+                        Fullname = a.fullname,
+                        Phone = a.phone,
+                        AppDate = a.appdate,
+                        Specialties = string.Join(", ", a.Specialties.Select(name =>
+                            specialtyShortNames.TryGetValue(name, out var shortName) 
+                            ? shortName : name))
+                    })
+                    .ToList();
+
+                _data = new BindingList<AbiturientSort>(students);
+                dataGridView1.Columns.Clear();
+
+                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                checkBoxColumn.HeaderText = "✓";
+                checkBoxColumn.Width = 30;
+                checkBoxColumn.Name = "CheckBoxColumn";
+                dataGridView1.Columns.Add(checkBoxColumn);
+
+                dataGridView1.DataSource = _data;
+
+                dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.Columns["Fullname"].HeaderText = "ПІП";
+                dataGridView1.Columns["Fullname"].MinimumWidth = 225;
+                dataGridView1.Columns["Phone"].HeaderText = "Телефон";
+                dataGridView1.Columns["Specialties"].HeaderText = "Обрані спеціальності";
+                dataGridView1.Columns["Specialties"].MinimumWidth = 139;
+                dataGridView1.Columns["AppDate"].HeaderText = "Дата подачі";
+            }
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var clickedColumn = dataGridView1.Columns[e.ColumnIndex];
+
+
+            if (clickedColumn.Name == "CheckBoxColumn")
+            {
+                _checkAll = !_checkAll;
+
+                // Завершаем редактирование (если чекбокс в фокусе)
+                if (dataGridView1.IsCurrentCellInEditMode)
+                    dataGridView1.EndEdit();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["CheckBoxColumn"].Value = _checkAll;
+                }
+
+                // Принудительно обновляем представление
+                dataGridView1.Refresh();
+
+                return;
+            }
+
+            if (clickedColumn.Name == "CheckBoxColumn")
+            {
+                _checkAll = !_checkAll;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["CheckBoxColumn"].Value = _checkAll;
+                }
+
+                return;
+            }
+
+            string columnName = dataGridView1.Columns[e.ColumnIndex].DataPropertyName;
+
+            if (columnName != "Fullname" && columnName != "AppDate") return;
+
+            if (_lastSortedColumn == columnName)
+                _sortAscending = !_sortAscending;
+            else
+                _sortAscending = true;
+
+            _lastSortedColumn = columnName;
+
+            IEnumerable<AbiturientSort> sorted;
+            if (_sortAscending)
+                sorted = _data.OrderBy(x => GetPropertyValue(x, columnName));
+            else
+                sorted = _data.OrderByDescending(x => GetPropertyValue(x, columnName));
+
+            _data = new BindingList<AbiturientSort>(sorted.ToList());
+            dataGridView1.DataSource = _data;
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (column.DataPropertyName == columnName)
+                {
+                    column.HeaderText = (columnName == "Fullname" ? "ПІП" : "Дата подачі") +
+                        (_sortAscending ? " ▲" : " ▼");
+                }
+                else if (column.DataPropertyName == "Fullname")
+                {
+                    column.HeaderText = "ПІП";
+                }
+                else if (column.DataPropertyName == "AppDate")
+                {
+                    column.HeaderText = "Дата подачі";
+                }
+            }
+        }
+        private object GetPropertyValue(AbiturientSort item, string propertyName)
+        {
+            return typeof(AbiturientSort).GetProperty(propertyName).GetValue(item, null);
+        }
+
+        private void ConfigureDataGridView()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+            dataGridView1.CurrentCell = null;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.ReadOnly = column.Name != "CheckBoxColumn";
             }
         }
     }

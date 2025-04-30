@@ -298,14 +298,14 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(257, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(767, 67);
+            this.topPanel.Size = new System.Drawing.Size(893, 67);
             this.topPanel.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(552, 34);
+            this.label4.Location = new System.Drawing.Point(666, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 21);
             this.label4.TabIndex = 3;
@@ -315,7 +315,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(552, 13);
+            this.label3.Location = new System.Drawing.Point(666, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 19);
             this.label3.TabIndex = 2;
@@ -330,7 +330,7 @@
             this.sataPictureBox1.BorderSize = 1;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(492, 9);
+            this.sataPictureBox1.Location = new System.Drawing.Point(606, 9);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(48, 48);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,14 +352,14 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(257, 67);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(767, 597);
+            this.mainPanel.Size = new System.Drawing.Size(893, 597);
             this.mainPanel.TabIndex = 3;
             // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1024, 664);
+            this.ClientSize = new System.Drawing.Size(1150, 664);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.menuPanel);

@@ -90,6 +90,7 @@
     <Compile Include="Abiturients.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="AbiturientSort.cs" />
     <Compile Include="Applications.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>

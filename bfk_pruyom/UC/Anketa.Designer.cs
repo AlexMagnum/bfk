@@ -40,6 +40,7 @@ namespace bfk_pruyom.UC
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sataPanel3 = new SATAUiFramework.SATAPanel();
+            this.sataToggle1 = new SATAUiFramework.Controls.SATAToggle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.sataDateTimePicker1 = new SATAUiFramework.Controls.SATADateTimePicker();
@@ -78,7 +79,6 @@ namespace bfk_pruyom.UC
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sataProgressbar1 = new SATAUiFramework.Controls.SATAProgressbar();
-            this.sataToggle1 = new SATAUiFramework.Controls.SATAToggle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.sataPanel1.SuspendLayout();
             this.sataPanel2.SuspendLayout();
@@ -116,7 +116,7 @@ namespace bfk_pruyom.UC
             this.sataPanel1.Controls.Add(this.sataBarChart1);
             this.sataPanel1.Location = new System.Drawing.Point(13, 16);
             this.sataPanel1.Name = "sataPanel1";
-            this.sataPanel1.Size = new System.Drawing.Size(504, 242);
+            this.sataPanel1.Size = new System.Drawing.Size(637, 242);
             this.sataPanel1.TabIndex = 0;
             // 
             // sataBarChart1
@@ -144,19 +144,19 @@ namespace bfk_pruyom.UC
             dataSet1.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             dataSet1.Label = "";
             dataSet1.Points = new float[] {
-        15F,
-        25F,
-        50F,
-        30F,
-        80F,
-        45F,
-        90F,
-        44F,
-        30F,
-        10F,
-        9F,
-        15F,
-        100F};
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F,
+        0F};
             this.sataBarChart1.DataSets.Add(dataSet1);
             this.sataBarChart1.DayColor = System.Drawing.Color.Gray;
             this.sataBarChart1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -165,7 +165,7 @@ namespace bfk_pruyom.UC
             this.sataBarChart1.MaxValue = 100F;
             this.sataBarChart1.Name = "sataBarChart1";
             this.sataBarChart1.RoundedBars = true;
-            this.sataBarChart1.Size = new System.Drawing.Size(479, 221);
+            this.sataBarChart1.Size = new System.Drawing.Size(610, 221);
             this.sataBarChart1.TabIndex = 0;
             this.sataBarChart1.UsePercent = false;
             // 
@@ -183,7 +183,7 @@ namespace bfk_pruyom.UC
             this.sataPanel2.Controls.Add(this.dataGridView1);
             this.sataPanel2.Location = new System.Drawing.Point(13, 264);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(504, 280);
+            this.sataPanel2.Size = new System.Drawing.Size(637, 280);
             this.sataPanel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -192,8 +192,10 @@ namespace bfk_pruyom.UC
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(504, 280);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(637, 280);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
             // sataPanel3
             // 
@@ -214,10 +216,23 @@ namespace bfk_pruyom.UC
             this.sataPanel3.Controls.Add(this.sataButton4);
             this.sataPanel3.Controls.Add(this.sataButton2);
             this.sataPanel3.Controls.Add(this.enterVerify);
-            this.sataPanel3.Location = new System.Drawing.Point(537, 264);
+            this.sataPanel3.Location = new System.Drawing.Point(665, 264);
             this.sataPanel3.Name = "sataPanel3";
             this.sataPanel3.Size = new System.Drawing.Size(215, 317);
             this.sataPanel3.TabIndex = 1;
+            // 
+            // sataToggle1
+            // 
+            this.sataToggle1.AutoSize = true;
+            this.sataToggle1.EllipseBorderColor = "#3b73d1";
+            this.sataToggle1.EllipseColor = "#508ef5";
+            this.sataToggle1.Location = new System.Drawing.Point(5, 93);
+            this.sataToggle1.Name = "sataToggle1";
+            this.sataToggle1.Size = new System.Drawing.Size(47, 19);
+            this.sataToggle1.TabIndex = 12;
+            this.sataToggle1.Text = "sataToggle1";
+            this.sataToggle1.UseVisualStyleBackColor = true;
+            this.sataToggle1.CheckedChanged += new System.EventHandler(this.sataToggle1_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -342,7 +357,7 @@ namespace bfk_pruyom.UC
             // 
             // sataButton2
             // 
-            this.sataButton2.ButtonText = "Зформувати анкету";
+            this.sataButton2.ButtonText = "Сформувати анкету";
             this.sataButton2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
             this.sataButton2.CheckedForeColor = System.Drawing.Color.White;
             this.sataButton2.CheckedImageTint = System.Drawing.Color.White;
@@ -459,7 +474,7 @@ namespace bfk_pruyom.UC
             this.sataPanel4.Controls.Add(this.pictureBox2);
             this.sataPanel4.Controls.Add(this.label1);
             this.sataPanel4.Controls.Add(this.pictureBox1);
-            this.sataPanel4.Location = new System.Drawing.Point(537, 16);
+            this.sataPanel4.Location = new System.Drawing.Point(665, 16);
             this.sataPanel4.Name = "sataPanel4";
             this.sataPanel4.Size = new System.Drawing.Size(215, 242);
             this.sataPanel4.TabIndex = 2;
@@ -777,22 +792,10 @@ namespace bfk_pruyom.UC
             this.sataProgressbar1.MaxValue = 100;
             this.sataProgressbar1.Name = "sataProgressbar1";
             this.sataProgressbar1.ShowBorder = true;
-            this.sataProgressbar1.Size = new System.Drawing.Size(504, 31);
+            this.sataProgressbar1.Size = new System.Drawing.Size(637, 31);
             this.sataProgressbar1.TabIndex = 3;
             this.sataProgressbar1.Text = "sataProgressbar1";
             this.sataProgressbar1.Value = 0;
-            // 
-            // sataToggle1
-            // 
-            this.sataToggle1.AutoSize = true;
-            this.sataToggle1.EllipseBorderColor = "#3b73d1";
-            this.sataToggle1.EllipseColor = "#508ef5";
-            this.sataToggle1.Location = new System.Drawing.Point(5, 93);
-            this.sataToggle1.Name = "sataToggle1";
-            this.sataToggle1.Size = new System.Drawing.Size(47, 19);
-            this.sataToggle1.TabIndex = 12;
-            this.sataToggle1.Text = "sataToggle1";
-            this.sataToggle1.UseVisualStyleBackColor = true;
             // 
             // backgroundWorker1
             // 
@@ -811,7 +814,7 @@ namespace bfk_pruyom.UC
             this.Controls.Add(this.sataPanel2);
             this.Controls.Add(this.sataPanel1);
             this.Name = "Anketa";
-            this.Size = new System.Drawing.Size(767, 597);
+            this.Size = new System.Drawing.Size(893, 597);
             this.sataPanel1.ResumeLayout(false);
             this.sataPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
