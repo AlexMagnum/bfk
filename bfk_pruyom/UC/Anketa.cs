@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using System.Drawing.Printing;
 
 namespace bfk_pruyom.UC
 {
@@ -47,6 +49,7 @@ namespace bfk_pruyom.UC
             sataDateTimePicker1.Enabled = false;
             LoadData();
             ConfigureDataGridView();
+            LoadSpecialties();
         }
 
         private void enterVerify_Click(object sender, EventArgs e)
@@ -376,7 +379,7 @@ namespace bfk_pruyom.UC
                         Phone = a.phone,
                         AppDate = a.appdate,
                         Specialties = string.Join(", ", a.Specialties.Select(name =>
-                            specialtyShortNames.TryGetValue(name, out var shortName) 
+                            specialtyShortNames.TryGetValue(name, out var shortName)
                             ? shortName : name))
                     })
                     .ToList();
@@ -411,7 +414,6 @@ namespace bfk_pruyom.UC
             {
                 _checkAll = !_checkAll;
 
-                // Завершаем редактирование (если чекбокс в фокусе)
                 if (dataGridView1.IsCurrentCellInEditMode)
                     dataGridView1.EndEdit();
 
@@ -420,7 +422,6 @@ namespace bfk_pruyom.UC
                     row.Cells["CheckBoxColumn"].Value = _checkAll;
                 }
 
-                // Принудительно обновляем представление
                 dataGridView1.Refresh();
 
                 return;
@@ -493,6 +494,166 @@ namespace bfk_pruyom.UC
             {
                 column.ReadOnly = column.Name != "CheckBoxColumn";
             }
+        }
+
+        private void sataButton1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex != -1 && sataDateTimePicker1.Enabled == false)
+                LoadFilteredData(specialtyName: comboBox1.SelectedItem.ToString());
+            else if (comboBox1.SelectedIndex == -1 && sataDateTimePicker1.Enabled == true)
+                LoadFilteredData(appDate: sataDateTimePicker1.Value);
+            else if(comboBox1.SelectedIndex != -1 && sataDateTimePicker1.Enabled == true)
+                LoadFilteredData(comboBox1.SelectedItem.ToString(), sataDateTimePicker1.Value);
+            else
+                ShowMessage("Оберіть параметри сортування!", "Дані для сортування не обрано");
+
+        }
+
+        private void LoadFilteredData(string specialtyName = null, DateTime? appDate = null)
+        {
+            using (var context = new bfk_pruyomEntities())
+            {
+                var result = context.Abiturients.Include(a => a.Applications.Select(ap => ap.Specialties))
+    .ToList()
+    .Where(a =>
+        (specialtyName == null || a.Applications.Any(ap => ap.priority == 1 && ap.Specialties.name == specialtyName)) &&
+        (appDate == null || a.appdate.Date == appDate.Value.Date) 
+    )
+    .Select(a => new AbiturientSort
+    {
+        Id = a.id,
+        Fullname = a.fullname,
+        Phone = a.phone,
+        AppDate = a.appdate,
+        Specialties = string.Join(", ", a.Applications
+                .OrderBy(ap => ap.priority)
+                .Select(ap =>
+                specialtyShortNames.ContainsKey(ap.Specialties.name)
+                    ? specialtyShortNames[ap.Specialties.name]
+                    : ap.Specialties.name))
+    })
+        .ToList();
+
+                _data = new BindingList<AbiturientSort>(result);
+
+                dataGridView1.DataSource = null;
+                dataGridView1.Columns.Clear();
+
+                var checkBoxColumn = new DataGridViewCheckBoxColumn
+                {
+                    HeaderText = "✓",
+                    Width = 30,
+                    Name = "CheckBoxColumn"
+                };
+                dataGridView1.Columns.Add(checkBoxColumn);
+
+                dataGridView1.DataSource = _data;
+
+                dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.Columns["Fullname"].HeaderText = "ПІП";
+                dataGridView1.Columns["Fullname"].MinimumWidth = 225;
+                dataGridView1.Columns["Phone"].HeaderText = "Телефон";
+                dataGridView1.Columns["Specialties"].HeaderText = "Обрані спеціальності";
+                dataGridView1.Columns["Specialties"].MinimumWidth = 139;
+                dataGridView1.Columns["AppDate"].HeaderText = "Дата подачі";
+
+                ConfigureDataGridView();
+            }
+
+        }
+
+        private void LoadSpecialties()
+        {
+            using (var context = new bfk_pruyomEntities())
+            {
+                var specialties = context.Specialties
+                    .OrderBy(s => s.name)
+                    .Select(s => s.name)
+                    .ToList();
+
+                comboBox1.DataSource = specialties;
+                comboBox1.SelectedIndex = -1;
+                comboBox1.Text = "Оберіть спеціальність";
+            }
+        }
+
+        private void FilterByFullname(string fullnameFilter)
+        {
+            using (var context = new bfk_pruyomEntities())
+            {
+                var abiturients = context.Abiturients
+                    .Include(a => a.Applications)
+                    .ToList();
+
+                var filteredAbiturients = abiturients
+                    .Where(a =>
+                        string.IsNullOrEmpty(fullnameFilter) || a.fullname.ToLower().Contains(fullnameFilter.ToLower())
+                    )
+                    .Select(a => new AbiturientSort
+                    {
+                        Id = a.id,
+                        Fullname = a.fullname,
+                        Phone = a.phone,
+                        AppDate = a.appdate,
+                        Specialties = string.Join(", ", a.Applications
+                            .OrderBy(ap => ap.priority)
+                            .Select(ap =>
+                                specialtyShortNames.ContainsKey(ap.Specialties.name)
+                                    ? specialtyShortNames[ap.Specialties.name]
+                                    : ap.Specialties.name
+                            ))
+                    })
+                    .ToList();
+
+                _data = new BindingList<AbiturientSort>(filteredAbiturients);
+
+                dataGridView1.DataSource = _data;
+
+
+            }
+        }
+
+        private void search__TextChanged(object sender, EventArgs e)
+        {
+            FilterByFullname(search.Texts);
+        }
+
+        private void sataButton2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit();
+            dataGridView1.CurrentCell = null;
+
+            var selectedRows = new List<AbiturientSort>();
+            int counter = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                var isChecked = Convert.ToBoolean(row.Cells["CheckBoxColumn"].Value);
+                if (isChecked)
+                {
+                    MessageBox.Show(counter.ToString());
+                    var model = new AbiturientSort
+                    {
+                        Id = (int)row.Cells["Id"].Value,
+                        Fullname = row.Cells["Fullname"].Value?.ToString(),
+                        Phone = row.Cells["Phone"].Value?.ToString(),
+                        AppDate = Convert.ToDateTime(row.Cells["AppDate"].Value),
+                        Specialties = row.Cells["Specialties"].Value?.ToString()
+                    };
+
+                    selectedRows.Add(model);
+                    counter++;
+                }
+                
+            }
+            if (selectedRows.Count < 1)
+            {
+                    ShowMessage("Не вибрано жодної анкети!", "Оберіть анкети");
+            }
+            foreach(var x in selectedRows)
+            {
+                MessageBox.Show(x.Fullname + " > " + x.Phone);
+            }
+
         }
     }
 }

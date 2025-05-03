@@ -40,11 +40,11 @@ namespace bfk_pruyom.UC
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sataPanel3 = new SATAUiFramework.SATAPanel();
+            this.search = new SATATextBox();
             this.sataToggle1 = new SATAUiFramework.Controls.SATAToggle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.sataDateTimePicker1 = new SATAUiFramework.Controls.SATADateTimePicker();
-            this.userLogin = new SATATextBox();
             this.sataButton4 = new FrameworkTest.SATAButton();
             this.sataButton2 = new FrameworkTest.SATAButton();
             this.enterVerify = new FrameworkTest.SATAButton();
@@ -208,11 +208,11 @@ namespace bfk_pruyom.UC
             borderRadius3.TopRight = 10;
             this.sataPanel3.BorderRadius = borderRadius3;
             this.sataPanel3.BorderThickness = 0;
+            this.sataPanel3.Controls.Add(this.search);
             this.sataPanel3.Controls.Add(this.sataToggle1);
             this.sataPanel3.Controls.Add(this.comboBox1);
             this.sataPanel3.Controls.Add(this.sataButton1);
             this.sataPanel3.Controls.Add(this.sataDateTimePicker1);
-            this.sataPanel3.Controls.Add(this.userLogin);
             this.sataPanel3.Controls.Add(this.sataButton4);
             this.sataPanel3.Controls.Add(this.sataButton2);
             this.sataPanel3.Controls.Add(this.enterVerify);
@@ -220,6 +220,28 @@ namespace bfk_pruyom.UC
             this.sataPanel3.Name = "sataPanel3";
             this.sataPanel3.Size = new System.Drawing.Size(215, 317);
             this.sataPanel3.TabIndex = 1;
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.search.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.search.BorderRadius = 5;
+            this.search.BorderSize = 3;
+            this.search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.IconSize = new System.Drawing.Size(20, 20);
+            this.search.Location = new System.Drawing.Point(4, 12);
+            this.search.Multiline = false;
+            this.search.Name = "search";
+            this.search.PasswordChar = false;
+            this.search.PlaceholderColor = System.Drawing.Color.Gray;
+            this.search.PlaceholderText = "Пошук за ПІП";
+            this.search.Size = new System.Drawing.Size(207, 37);
+            this.search.TabIndex = 7;
+            this.search.Texts = "";
+            this.search.UnderlinedStyle = false;
+            this.search._TextChanged += new System.EventHandler(this.search__TextChanged);
             // 
             // sataToggle1
             // 
@@ -281,6 +303,7 @@ namespace bfk_pruyom.UC
             this.sataButton1.TabIndex = 10;
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(5, 0);
+            this.sataButton1.Click += new System.EventHandler(this.sataButton1_Click);
             // 
             // sataDateTimePicker1
             // 
@@ -293,28 +316,6 @@ namespace bfk_pruyom.UC
             this.sataDateTimePicker1.Name = "sataDateTimePicker1";
             this.sataDateTimePicker1.Size = new System.Drawing.Size(155, 20);
             this.sataDateTimePicker1.TabIndex = 9;
-            // 
-            // userLogin
-            // 
-            this.userLogin.BackColor = System.Drawing.Color.White;
-            this.userLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.userLogin.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.userLogin.BorderRadius = 5;
-            this.userLogin.BorderSize = 3;
-            this.userLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.userLogin.Icon = ((System.Drawing.Image)(resources.GetObject("userLogin.Icon")));
-            this.userLogin.IconSize = new System.Drawing.Size(20, 20);
-            this.userLogin.Location = new System.Drawing.Point(4, 12);
-            this.userLogin.Multiline = false;
-            this.userLogin.Name = "userLogin";
-            this.userLogin.PasswordChar = false;
-            this.userLogin.PlaceholderColor = System.Drawing.Color.Gray;
-            this.userLogin.PlaceholderText = "Пошук за ПІП";
-            this.userLogin.Size = new System.Drawing.Size(207, 37);
-            this.userLogin.TabIndex = 7;
-            this.userLogin.Text = "sataTextBox1";
-            this.userLogin.Texts = "";
-            this.userLogin.UnderlinedStyle = false;
             // 
             // sataButton4
             // 
@@ -393,6 +394,7 @@ namespace bfk_pruyom.UC
             this.sataButton2.TabIndex = 6;
             this.sataButton2.TextAutoCenter = false;
             this.sataButton2.TextOffset = new System.Drawing.Point(5, 0);
+            this.sataButton2.Click += new System.EventHandler(this.sataButton2_Click);
             // 
             // enterVerify
             // 
@@ -881,7 +883,7 @@ namespace bfk_pruyom.UC
         private FrameworkTest.SATAButton sataButton4;
         private FrameworkTest.SATAButton sataButton2;
         private FrameworkTest.SATAButton enterVerify;
-        private SATATextBox userLogin;
+        private SATATextBox search;
         private SATAUiFramework.Controls.SATADateTimePicker sataDateTimePicker1;
         private FrameworkTest.SATAButton sataButton1;
         private SATAUiFramework.Controls.SATAProgressbar sataProgressbar1;
