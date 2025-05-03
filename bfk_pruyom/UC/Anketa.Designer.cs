@@ -80,6 +80,7 @@ namespace bfk_pruyom.UC
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sataProgressbar1 = new SATAUiFramework.Controls.SATAProgressbar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.sataPanel1.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -355,6 +356,7 @@ namespace bfk_pruyom.UC
             this.sataButton4.TabIndex = 6;
             this.sataButton4.TextAutoCenter = false;
             this.sataButton4.TextOffset = new System.Drawing.Point(5, 0);
+            this.sataButton4.Click += new System.EventHandler(this.sataButton4_Click);
             // 
             // sataButton2
             // 
@@ -806,6 +808,13 @@ namespace bfk_pruyom.UC
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
             // Anketa
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -890,5 +899,6 @@ namespace bfk_pruyom.UC
         private System.Windows.Forms.ComboBox comboBox1;
         private SATAUiFramework.Controls.SATAToggle sataToggle1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

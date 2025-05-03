@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using Xceed.Words.NET;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using System.Drawing.Printing;
+using bfk_pruyom.Forms;
 
 namespace bfk_pruyom.UC
 {
@@ -620,17 +622,31 @@ namespace bfk_pruyom.UC
 
         private void sataButton2_Click(object sender, EventArgs e)
         {
+            backgroundWorker2.RunWorkerAsync();
+
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string templatePath = @"..\..\template.docx";
             dataGridView1.EndEdit();
             dataGridView1.CurrentCell = null;
+            int counter = 0;
+
+            if (!File.Exists(templatePath))
+            {
+                ShowMessage("Шаблон анкети не знайдено!", "Помилка шаблону анкети");
+                return;
+            }
 
             var selectedRows = new List<AbiturientSort>();
-            int counter = 0;
+
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 var isChecked = Convert.ToBoolean(row.Cells["CheckBoxColumn"].Value);
                 if (isChecked)
                 {
-                    MessageBox.Show(counter.ToString());
+
                     var model = new AbiturientSort
                     {
                         Id = (int)row.Cells["Id"].Value,
@@ -639,21 +655,100 @@ namespace bfk_pruyom.UC
                         AppDate = Convert.ToDateTime(row.Cells["AppDate"].Value),
                         Specialties = row.Cells["Specialties"].Value?.ToString()
                     };
-
                     selectedRows.Add(model);
-                    counter++;
                 }
-                
+
             }
             if (selectedRows.Count < 1)
             {
-                    ShowMessage("Не вибрано жодної анкети!", "Оберіть анкети");
+                ShowMessage("Не вибрано жодної анкети!", "Оберіть анкети");
             }
-            foreach(var x in selectedRows)
+            foreach (var x in selectedRows)
             {
-                MessageBox.Show(x.Fullname + " > " + x.Phone);
+                using (var doc = DocX.Load(templatePath))
+                {
+                    var abiturient = context.Abiturients.Include(a => a.Applications.Select(app => app.Specialties))
+                        .FirstOrDefault(a => a.id == x.Id);
+                    var specialties = context.Applications.Where(app => app.abiturientid == x.Id)
+                        .OrderBy(app => app.priority).Select(app => app.Specialties.name).ToList();
+                    var mainSpecCode = context.Applications.Where(a => a.abiturientid == x.Id)
+                        .OrderBy(a => a.priority).Select(a => a.Specialties.code).FirstOrDefault();
+
+                    doc.ReplaceText("{fullname}", abiturient.fullname);
+                    doc.ReplaceText("{address}", abiturient.address);
+                    doc.ReplaceText("{phone}", abiturient.phone);
+                    doc.ReplaceText("{study}", abiturient.study);
+                    doc.ReplaceText("{school}", abiturient.school);
+                    doc.ReplaceText("{father_fullname}", abiturient.fathername);
+                    doc.ReplaceText("{father_phone}", abiturient.fatherphone);
+                    doc.ReplaceText("{mother_fullname}", abiturient.mothername);
+                    doc.ReplaceText("{mother_phone}", abiturient.motherphone);
+                    doc.ReplaceText("{group}", abiturient.workgroup);
+                    var parts = abiturient.information.Split(';')
+                          .Select(p => p.Trim())
+                          .Where(p => !string.IsNullOrEmpty(p))
+                          .ToList();
+                    doc.ReplaceText("{info}", string.Join(Environment.NewLine, parts.Select(p => $"- {p}")));
+                    doc.ReplaceText("{house}", abiturient.dormitory);
+                    doc.ReplaceText("{date}", abiturient.appdate.ToString("dd.MM.yyyy"));
+
+                    doc.ReplaceText("{main_spec}", specialties.Count > 0 ? specialties[0] : "");
+                    doc.ReplaceText("{spec}", specialties.Count > 0 ? specialties[0] : "");
+                    doc.ReplaceText("{code_spec}", mainSpecCode);
+
+                    for (int i = 1; i <= 5; i++)
+                    {
+                        string placeholder = $"{{spec{i}}}";
+                        string value = specialties.Count > i ? specialties[i] : "-";
+                        doc.ReplaceText(placeholder, value);
+                    }
+
+                    doc.SaveAs(@"..\..\Анкети\" + abiturient.fullname + " Id_" + abiturient.id.ToString() + ".docx");
+                    counter++;
+                }
+                int progress = (int)((counter + 1) * 100.0 / selectedRows.Count);
+                backgroundWorker2.ReportProgress(progress);
+            }
+        }
+
+        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            sataProgressbar1.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ShowMessage("Створення анкет завершено!", "Анкети згенеровано");
+        }
+
+        private void sataButton4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit();
+            dataGridView1.CurrentCell = null;
+
+            int checkedCount = 0;
+            DataGridViewRow checkedRow = null;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                bool isChecked = Convert.ToBoolean(row.Cells["CheckBoxColumn"].Value);
+                if (isChecked)
+                {
+                    checkedCount++;
+                    checkedRow = row;
+                }
             }
 
+            if (checkedCount != 1)
+            {
+                ShowMessage("Для редагування оберіть лише одного абітурієнта!", "Помилка вибору абітурієнта");
+            }
+            else
+            { 
+                int selectedId = (int)checkedRow.Cells["Id"].Value;
+                var form = new AbiturientEditor(selectedId);
+                form.Show();
+            } 
         }
     }
 }
