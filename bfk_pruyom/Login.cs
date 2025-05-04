@@ -19,8 +19,6 @@ namespace bfk_pruyom
         public Login()
         {
             InitializeComponent();
-            Dashboard d = new Dashboard();
-            d.Show();
         }
 
         protected override CreateParams CreateParams
@@ -46,6 +44,43 @@ namespace bfk_pruyom
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void enterVerify_Click(object sender, EventArgs e)
+        {
+            string username = userLogin.Texts.Trim();
+            string password = userPassword.Texts.Trim();
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Будь ласка заповніть поля!", "Помилка вхідних даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var context = new bfk_pruyomEntities())
+            {
+                var user = context.Pruyomusers.FirstOrDefault(u => u.username == username);
+                if (user != null)
+                {
+                    try
+                    {
+                        string decryptedPassword = CryptoHelper.Decrypt(user.password);
+                        if (decryptedPassword == password)
+                        {
+                            Dashboard.realUserName = user.realsurname + " " + user.realname;
+                            Dashboard.userRole = user.position;
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Помилка при перевірці пароля", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                MessageBox.Show("Невірний логін або пароль", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

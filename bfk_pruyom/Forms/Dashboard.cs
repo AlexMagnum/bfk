@@ -16,13 +16,20 @@ namespace bfk_pruyom.Forms
     public partial class Dashboard : Form
     {
         private const int CS_DROPSHADOW = 0x00020000;
+        public static string userRole;
+        public static string realUserName;
 
         public Dashboard()
         {
             InitializeComponent();
+            label3.Text = realUserName;
+            label4.Text = userRole;
             label2.Text = "";
+
+            if(userRole != "Відповідальний секретар")
+                sataButton4.Visible = false;
         }
-        
+
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -58,5 +65,18 @@ namespace bfk_pruyom.Forms
             mainPanel.Controls.Add(c);
         }
 
+        private void sataButton3_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Редактор спеціальностей";
+            Specials s = new Specials();
+            AddUserControl(s);
+        }
+
+        private void sataButton4_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Редактор користувачів";
+            ProgramUsers pu = new ProgramUsers();
+            AddUserControl(pu);
+        }
     }
 }

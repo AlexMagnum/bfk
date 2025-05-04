@@ -77,6 +77,20 @@ namespace bfk_pruyom.Forms
             this.enterVerify = new FrameworkTest.SATAButton();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.sataButton2 = new FrameworkTest.SATAButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -91,6 +105,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox1.BorderRadius = 5;
             this.sataTextBox1.BorderSize = 2;
+            this.sataTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox1.Icon = null;
             this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox1.Location = new System.Drawing.Point(28, 30);
@@ -99,7 +114,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox1.PasswordChar = false;
             this.sataTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox1.PlaceholderText = "";
-            this.sataTextBox1.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox1.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox1.TabIndex = 0;
             this.sataTextBox1.Text = "sataTextBox1";
             this.sataTextBox1.Texts = "";
@@ -122,6 +137,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox2.BorderRadius = 5;
             this.sataTextBox2.BorderSize = 2;
+            this.sataTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox2.Icon = null;
             this.sataTextBox2.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox2.Location = new System.Drawing.Point(28, 94);
@@ -153,6 +169,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox3.BorderRadius = 5;
             this.sataTextBox3.BorderSize = 2;
+            this.sataTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox3.Icon = null;
             this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox3.Location = new System.Drawing.Point(28, 202);
@@ -161,7 +178,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox3.PasswordChar = false;
             this.sataTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox3.PlaceholderText = "";
-            this.sataTextBox3.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox3.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox3.TabIndex = 0;
             this.sataTextBox3.Text = "sataTextBox1";
             this.sataTextBox3.Texts = "";
@@ -184,6 +201,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox4.BorderRadius = 5;
             this.sataTextBox4.BorderSize = 2;
+            this.sataTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox4.Icon = null;
             this.sataTextBox4.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox4.Location = new System.Drawing.Point(28, 270);
@@ -192,7 +210,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox4.PasswordChar = false;
             this.sataTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox4.PlaceholderText = "";
-            this.sataTextBox4.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox4.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox4.TabIndex = 0;
             this.sataTextBox4.Text = "sataTextBox1";
             this.sataTextBox4.Texts = "";
@@ -215,6 +233,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox5.BorderRadius = 5;
             this.sataTextBox5.BorderSize = 2;
+            this.sataTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox5.Icon = null;
             this.sataTextBox5.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox5.Location = new System.Drawing.Point(28, 339);
@@ -223,7 +242,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox5.PasswordChar = false;
             this.sataTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox5.PlaceholderText = "";
-            this.sataTextBox5.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox5.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox5.TabIndex = 0;
             this.sataTextBox5.Text = "sataTextBox1";
             this.sataTextBox5.Texts = "";
@@ -246,6 +265,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox6.BorderRadius = 5;
             this.sataTextBox6.BorderSize = 2;
+            this.sataTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox6.Icon = null;
             this.sataTextBox6.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox6.Location = new System.Drawing.Point(28, 412);
@@ -278,6 +298,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox7.BorderRadius = 5;
             this.sataTextBox7.BorderSize = 2;
+            this.sataTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox7.Icon = null;
             this.sataTextBox7.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox7.Location = new System.Drawing.Point(28, 525);
@@ -286,7 +307,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox7.PasswordChar = false;
             this.sataTextBox7.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox7.PlaceholderText = "";
-            this.sataTextBox7.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox7.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox7.TabIndex = 0;
             this.sataTextBox7.Text = "sataTextBox1";
             this.sataTextBox7.Texts = "";
@@ -309,15 +330,16 @@ namespace bfk_pruyom.Forms
             this.sataTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox8.BorderRadius = 5;
             this.sataTextBox8.BorderSize = 2;
+            this.sataTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox8.Icon = null;
             this.sataTextBox8.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox8.Location = new System.Drawing.Point(28, 591);
+            this.sataTextBox8.Location = new System.Drawing.Point(28, 593);
             this.sataTextBox8.Multiline = false;
             this.sataTextBox8.Name = "sataTextBox8";
             this.sataTextBox8.PasswordChar = false;
             this.sataTextBox8.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox8.PlaceholderText = "";
-            this.sataTextBox8.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox8.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox8.TabIndex = 0;
             this.sataTextBox8.Text = "sataTextBox1";
             this.sataTextBox8.Texts = "";
@@ -327,7 +349,7 @@ namespace bfk_pruyom.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(25, 570);
+            this.label8.Location = new System.Drawing.Point(25, 571);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 18);
             this.label8.TabIndex = 1;
@@ -340,6 +362,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox9.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox9.BorderRadius = 5;
             this.sataTextBox9.BorderSize = 2;
+            this.sataTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox9.Icon = null;
             this.sataTextBox9.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox9.Location = new System.Drawing.Point(428, 30);
@@ -348,7 +371,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox9.PasswordChar = false;
             this.sataTextBox9.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox9.PlaceholderText = "";
-            this.sataTextBox9.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox9.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox9.TabIndex = 0;
             this.sataTextBox9.Text = "sataTextBox1";
             this.sataTextBox9.Texts = "";
@@ -361,6 +384,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox10.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox10.BorderRadius = 5;
             this.sataTextBox10.BorderSize = 2;
+            this.sataTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox10.Icon = null;
             this.sataTextBox10.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox10.Location = new System.Drawing.Point(428, 96);
@@ -369,7 +393,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox10.PasswordChar = false;
             this.sataTextBox10.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.sataTextBox10.PlaceholderText = "";
-            this.sataTextBox10.Size = new System.Drawing.Size(309, 33);
+            this.sataTextBox10.Size = new System.Drawing.Size(309, 35);
             this.sataTextBox10.TabIndex = 0;
             this.sataTextBox10.Text = "sataTextBox1";
             this.sataTextBox10.Texts = "";
@@ -475,7 +499,7 @@ namespace bfk_pruyom.Forms
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(425, 496);
+            this.label15.Location = new System.Drawing.Point(425, 493);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(242, 18);
             this.label15.TabIndex = 3;
@@ -485,7 +509,7 @@ namespace bfk_pruyom.Forms
             // 
             this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(428, 525);
+            this.comboBox5.Location = new System.Drawing.Point(428, 522);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(309, 26);
             this.comboBox5.TabIndex = 4;
@@ -516,6 +540,7 @@ namespace bfk_pruyom.Forms
             this.sataTextBox11.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
             this.sataTextBox11.BorderRadius = 5;
             this.sataTextBox11.BorderSize = 2;
+            this.sataTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sataTextBox11.Icon = null;
             this.sataTextBox11.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox11.Location = new System.Drawing.Point(819, 30);
@@ -677,6 +702,7 @@ namespace bfk_pruyom.Forms
             this.enterVerify.TabIndex = 7;
             this.enterVerify.TextAutoCenter = false;
             this.enterVerify.TextOffset = new System.Drawing.Point(5, 0);
+            this.enterVerify.Click += new System.EventHandler(this.enterVerify_Click);
             // 
             // sataButton1
             // 
@@ -716,6 +742,7 @@ namespace bfk_pruyom.Forms
             this.sataButton1.TabIndex = 7;
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(5, 0);
+            this.sataButton1.Click += new System.EventHandler(this.sataButton1_Click);
             // 
             // sataButton2
             // 
@@ -757,12 +784,180 @@ namespace bfk_pruyom.Forms
             this.sataButton2.TextOffset = new System.Drawing.Point(5, 0);
             this.sataButton2.Click += new System.EventHandler(this.sataButton2_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label20.Location = new System.Drawing.Point(63, 9);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 20);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "*";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label21.Location = new System.Drawing.Point(91, 73);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 20);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label22.Location = new System.Drawing.Point(106, 181);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(15, 20);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "*";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label23.Location = new System.Drawing.Point(87, 318);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(15, 20);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label24.Location = new System.Drawing.Point(87, 391);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(15, 20);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label25.Location = new System.Drawing.Point(76, 248);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(15, 20);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label26.Location = new System.Drawing.Point(121, 504);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(15, 20);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "*";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label27.Location = new System.Drawing.Point(165, 572);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(15, 20);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "*";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label28.Location = new System.Drawing.Point(519, 7);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(15, 20);
+            this.label28.TabIndex = 16;
+            this.label28.Text = "*";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label29.Location = new System.Drawing.Point(562, 75);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(15, 20);
+            this.label29.TabIndex = 17;
+            this.label29.Text = "*";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label30.Location = new System.Drawing.Point(638, 146);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(15, 20);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "*";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label31.Location = new System.Drawing.Point(880, 8);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(15, 20);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "*";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label32.Location = new System.Drawing.Point(1084, 130);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(15, 20);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label33.Location = new System.Drawing.Point(1014, 368);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(15, 20);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "*";
+            // 
             // AbiturientEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1150, 664);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.sataButton2);
             this.Controls.Add(this.sataButton1);
             this.Controls.Add(this.enterVerify);
@@ -867,5 +1062,19 @@ namespace bfk_pruyom.Forms
         private FrameworkTest.SATAButton sataButton2;
         private FrameworkTest.SATAButton sataButton1;
         private FrameworkTest.SATAButton enterVerify;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
     }
 }

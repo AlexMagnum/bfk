@@ -52,6 +52,7 @@ namespace bfk_pruyom.UC
             LoadData();
             ConfigureDataGridView();
             LoadSpecialties();
+            sataToggle2.Checked = false;
         }
 
         private void enterVerify_Click(object sender, EventArgs e)
@@ -231,6 +232,24 @@ namespace bfk_pruyom.UC
 
         private void LoadCharts()
         {
+            for (int i = 0; i < sataBarChart1.DataSets[0].Points.Length; i++)
+            {
+                sataBarChart1.DataSets[0].Points[i] = 0;
+            }
+            label2.Text = "ОО-0";
+            label3.Text = "Ф-0";
+            label4.Text = "М-0";
+            label5.Text = "МД-0";
+            label6.Text = "Е-0";
+            label7.Text = "КН-0";
+            label8.Text = "ГЗ-0";
+            label9.Text = "А-0";
+            label10.Text = "Л-0";
+            label11.Text = "СП-0";
+            label12.Text = "ТТ-0";
+            label13.Text = "Х-0";
+            label14.Text = "КІ-0";
+
             List<Abiturients> abit = context.Abiturients.ToList();
             int maxValue = 0;
             label1.Text = "Всього анкет - " + abit.Count;
@@ -348,6 +367,143 @@ namespace bfk_pruyom.UC
             }
             sataBarChart1.MaxValue = maxValue;
 
+        }
+
+        private void LoadChartsApp()
+        {
+            for (int i = 0; i < sataBarChart1.DataSets[0].Points.Length; i++)
+            {
+                sataBarChart1.DataSets[0].Points[i] = 0;
+            }
+            label2.Text = "ОО-0";
+            label3.Text = "Ф-0";
+            label4.Text = "М-0";
+            label5.Text = "МД-0";
+            label6.Text = "Е-0";
+            label7.Text = "КН-0";
+            label8.Text = "ГЗ-0";
+            label9.Text = "А-0";
+            label10.Text = "Л-0";
+            label11.Text = "СП-0";
+            label12.Text = "ТТ-0";
+            label13.Text = "Х-0";
+            label14.Text = "КІ-0";
+
+            var applicationsBySpecialty = context.Applications.GroupBy(a => a.specialtyid).Select(g => new
+                {
+                    SpecialtyId = g.Key,
+                    Count = g.Count()
+                }).ToList();
+            int maxValue = 0;
+            label1.Text = "Всього заяв - " + context.Applications.Count();
+
+
+            foreach (var item in applicationsBySpecialty)
+            {
+                if (item.SpecialtyId == 1 && item.Count > 0)
+                {
+                    label2.Text = "ОО-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[0] = item.Count;
+                    maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 2 && item.Count > 0)
+                {
+                    label3.Text = "Ф-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[1] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 3 && item.Count > 0)
+                {
+                    label4.Text = "М-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[2] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 4 && item.Count > 0)
+                {
+                    label5.Text = "МД-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[3] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 5 && item.Count > 0)
+                {
+                    label6.Text = "Е-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[4] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 6 && item.Count > 0)
+                {
+                    label7.Text = "КН-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[5] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 7 && item.Count > 0)
+                {
+                    label8.Text = "ГЗ-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[6] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 8 && item.Count > 0)
+                {
+                    label9.Text = "А-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[7] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 9 && item.Count > 0)
+                {
+                    label10.Text = "Л-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[8] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 10 && item.Count > 0)
+                {
+                    label11.Text = "СП-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[9] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 11 && item.Count > 0)
+                {
+                    label12.Text = "ТТ-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[10] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 13 && item.Count > 0)
+                {
+                    label13.Text = "КІ-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[11] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+
+                if (item.SpecialtyId == 12 && item.Count > 0)
+                {
+                    label14.Text = "Х-" + item.Count;
+                    sataBarChart1.DataSets[0].Points[12] = item.Count;
+                    if (item.Count > maxValue)
+                        maxValue = item.Count;
+                }
+            }
+            sataBarChart1.MaxValue = maxValue;
         }
 
         private void sataToggle1_CheckedChanged(object sender, EventArgs e)
@@ -747,8 +903,24 @@ namespace bfk_pruyom.UC
             { 
                 int selectedId = (int)checkedRow.Cells["Id"].Value;
                 var form = new AbiturientEditor(selectedId);
-                form.Show();
+                form.ShowDialog();
+                if(form.DialogResult == DialogResult.OK)
+                {
+                    sataToggle2.Checked = false;
+                    LoadCharts();
+                    LoadData();
+                    ConfigureDataGridView();
+                    LoadSpecialties();
+                }
             } 
+        }
+
+        private void sataToggle2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sataToggle2.Checked)
+                LoadChartsApp();
+            else
+                LoadCharts();
         }
     }
 }

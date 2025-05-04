@@ -43,6 +43,7 @@
           <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="realname" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="realsurname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="position" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Specialties">
           <Key>
@@ -137,6 +138,7 @@
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="realname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="realsurname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="position" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Specialties">
           <Key>
@@ -227,6 +229,7 @@
           <EntitySetMapping Name="Pruyomusers">
             <EntityTypeMapping TypeName="bfk_pruyomModel.Pruyomusers">
               <MappingFragment StoreEntitySet="Pruyomusers">
+                <ScalarProperty Name="position" ColumnName="position" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />

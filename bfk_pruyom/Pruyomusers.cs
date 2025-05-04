@@ -19,5 +19,6 @@ namespace bfk_pruyom
         public string password { get; set; }
         public string realname { get; set; }
         public string realsurname { get; set; }
+        public string position { get; set; }
     }
 }
