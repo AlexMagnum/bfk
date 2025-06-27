@@ -50,9 +50,9 @@ namespace bfk_pruyom.UC
             this.enterVerify = new FrameworkTest.SATAButton();
             this.sataPanel4 = new SATAUiFramework.SATAPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.sataToggle2 = new SATAUiFramework.Controls.SATAToggle();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.sataToggle2 = new SATAUiFramework.Controls.SATAToggle();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -498,19 +498,6 @@ namespace bfk_pruyom.UC
             this.label15.TabIndex = 14;
             this.label15.Text = "Анкети / Заяви";
             // 
-            // sataToggle2
-            // 
-            this.sataToggle2.AutoSize = true;
-            this.sataToggle2.EllipseBorderColor = "#3b73d1";
-            this.sataToggle2.EllipseColor = "#508ef5";
-            this.sataToggle2.Location = new System.Drawing.Point(165, 9);
-            this.sataToggle2.Name = "sataToggle2";
-            this.sataToggle2.Size = new System.Drawing.Size(47, 19);
-            this.sataToggle2.TabIndex = 13;
-            this.sataToggle2.Text = "sataToggle2";
-            this.sataToggle2.UseVisualStyleBackColor = true;
-            this.sataToggle2.CheckedChanged += new System.EventHandler(this.sataToggle2_CheckedChanged);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -531,6 +518,19 @@ namespace bfk_pruyom.UC
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
+            // 
+            // sataToggle2
+            // 
+            this.sataToggle2.AutoSize = true;
+            this.sataToggle2.EllipseBorderColor = "#3b73d1";
+            this.sataToggle2.EllipseColor = "#508ef5";
+            this.sataToggle2.Location = new System.Drawing.Point(165, 9);
+            this.sataToggle2.Name = "sataToggle2";
+            this.sataToggle2.Size = new System.Drawing.Size(47, 19);
+            this.sataToggle2.TabIndex = 13;
+            this.sataToggle2.Text = "sataToggle2";
+            this.sataToggle2.UseVisualStyleBackColor = true;
+            this.sataToggle2.CheckedChanged += new System.EventHandler(this.sataToggle2_CheckedChanged);
             // 
             // label7
             // 

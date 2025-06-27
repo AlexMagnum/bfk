@@ -247,8 +247,8 @@ namespace bfk_pruyom.UC
             label10.Text = "Л-0";
             label11.Text = "СП-0";
             label12.Text = "ТТ-0";
-            label13.Text = "Х-0";
-            label14.Text = "КІ-0";
+            label13.Text = "КІ-0";
+            label14.Text = "Х-0";
 
             List<Abiturients> abit = context.Abiturients.ToList();
             int maxValue = 0;
@@ -386,8 +386,8 @@ namespace bfk_pruyom.UC
             label10.Text = "Л-0";
             label11.Text = "СП-0";
             label12.Text = "ТТ-0";
-            label13.Text = "Х-0";
-            label14.Text = "КІ-0";
+            label13.Text = "КІ-0";
+            label14.Text = "Х-0";
 
             var applicationsBySpecialty = context.Applications.GroupBy(a => a.specialtyid).Select(g => new
                 {
