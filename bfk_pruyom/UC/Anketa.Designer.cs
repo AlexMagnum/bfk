@@ -141,7 +141,7 @@ namespace bfk_pruyom.UC
         "А",
         "Л",
         "СП",
-        "ТТ",
+        "АТ",
         "КІ",
         "Х"};
             dataSet1.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));

@@ -38,7 +38,7 @@ namespace bfk_pruyom.UC
     { "Агрономія", "А" },
     { "Лісове господарство", "Л" },
     { "Садово-паркове господарство", "СП" },
-    { "Транспортні технології", "ТТ" },
+    { "Автомобільний транспорт", "АТ" },
     { "Харчові технології", "Х" },
     { "Комп'ютерна інженерія", "КІ" }
 };
@@ -246,7 +246,7 @@ namespace bfk_pruyom.UC
             label9.Text = "А-0";
             label10.Text = "Л-0";
             label11.Text = "СП-0";
-            label12.Text = "ТТ-0";
+            label12.Text = "АТ-0";
             label13.Text = "КІ-0";
             label14.Text = "Х-0";
 
@@ -343,7 +343,7 @@ namespace bfk_pruyom.UC
 
                 if (item.SpecialtyId == 11 && item.AbiturientCount > 0)
                 {
-                    label12.Text = "ТТ-" + item.AbiturientCount;
+                    label12.Text = "АТ-" + item.AbiturientCount;
                     sataBarChart1.DataSets[0].Points[10] = item.AbiturientCount;
                     if (item.AbiturientCount > maxValue)
                         maxValue = item.AbiturientCount;
@@ -385,7 +385,7 @@ namespace bfk_pruyom.UC
             label9.Text = "А-0";
             label10.Text = "Л-0";
             label11.Text = "СП-0";
-            label12.Text = "ТТ-0";
+            label12.Text = "АТ-0";
             label13.Text = "КІ-0";
             label14.Text = "Х-0";
 
@@ -481,7 +481,7 @@ namespace bfk_pruyom.UC
 
                 if (item.SpecialtyId == 11 && item.Count > 0)
                 {
-                    label12.Text = "ТТ-" + item.Count;
+                    label12.Text = "АТ-" + item.Count;
                     sataBarChart1.DataSets[0].Points[10] = item.Count;
                     if (item.Count > maxValue)
                         maxValue = item.Count;
